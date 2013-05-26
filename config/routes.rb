@@ -1,5 +1,6 @@
 Zirpirani::Application.routes.draw do
   get "home/index"
+  get "home/post_page"
 
   devise_for :accounts
 
