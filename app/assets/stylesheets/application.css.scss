@@ -66,6 +66,15 @@ background: #ddd;
 
 // shared styles - End
 
+
+.topLogo {
+    background: url('logo-top.png') no-repeat;
+    width: 50px;
+    height: 45px;
+    @include background-size(50px, 45px);
+    background-color: $white;
+}
+
 .postHeader {
     @include border-top-radius(5px);
     @include clearfix;
