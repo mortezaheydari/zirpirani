@@ -37,6 +37,23 @@
 
               <section class="top-bar-section">
                 <!-- Left Nav Section -->
+                <% if account_signed_in? %>
+                    <ul>
+                        <li>
+                            <%= link_to "صفحه شخصي", user_path(current_user) %>
+                        </li>
+                      <li class="divider"></li>
+                      <li><%= link_to "Sign Out", destroy_account_session_path, method: :DELETE %></li>
+                    </ul>
+                <% else %>
+                    <ul>
+                        <li>
+                            <%= link_to "ورود به سايت", new_account_session_path %>
+                        </li>
+                      <li class="divider"></li>
+                    </ul>
+                <% end %>
+
                 <ul class="left">
                   <li class="divider"></li>
                   <li><a href="#">پست زور وده!</a></li>
