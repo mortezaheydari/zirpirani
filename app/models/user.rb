@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   belongs_to :account
   has_many :posts
 
+  make_flagger
+
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_uniqueness_of :name, :on => :create, :message => "already taken"
   
