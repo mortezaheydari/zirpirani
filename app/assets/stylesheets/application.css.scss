@@ -48,6 +48,11 @@ background: #ddd;
     .fb_button, .tw_button {
         font-size:0.8em;
     }
+    .topLogo {
+        float: right;
+    }
+    .top-bar .toggle-topbar.menu-icon a span { left:-25px !important;}
+    .top-bar .toggle-topbar.menu-icon {direction: ltr; left:0 !important;}
 }
 
 .fb_button {
@@ -66,13 +71,25 @@ background: #ddd;
 
 // shared styles - End
 
+li.name {
+    a {
+        padding: 0 !important;
+
+    }
+}
+
 
 .topLogo {
     background: url('logo-top.png') no-repeat;
-    width: 50px;
+    @include background-size(48px, 45px);
+    width: 48px;
     height: 45px;
-    @include background-size(50px, 45px);
-    background-color: $white;
+    &:hover {
+        background: url('logo-top-hover.png') no-repeat;
+        @include background-size(149px, 45px);
+        width: 149px;
+        height: 45px;
+    }
 }
 
 .postHeader {
