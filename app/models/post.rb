@@ -1,10 +1,13 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :user_id, :image
 
+  belongs_to :user
+
+  validates_presence_of :title, :on => :create, :message => "can't be blank"
   validates_attachment :image,
 		:presence => true,
 		:content_type => { :content_type =>  ['image/png', 'image/jpg', 'image/jpeg'] },
 		:size => { :in => 0..10000.kilobytes }  
 
-  has_attached_file :image, :styles => { :medium => "200x200>", :thumb => "143x143#", :large => "1024x768>", :small => "50x50#", :profile => "350x350#" }		
+  has_attached_file :image, :styles => {:large => "650>"}		
 end
