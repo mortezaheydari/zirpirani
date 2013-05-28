@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  include SessionsHelper
   before_filter :authenticate_account!
 
   def show
@@ -39,11 +39,11 @@ class PostsController < ApplicationController
 
   def smiley_face
     @post = Post.find(params[:id])
-    current_user.unflag(@post, :favorite)
+    current_user.toggle_flag(@post, :favorite)
 
     respond_to do |format|
-        format.js { render 'posts/smiley_face.js.erb', :locals => { post: @post, card_type: params[:card_type] } }
+        format.js { render 'posts/smiley_face.js.erb', :locals => { post: @post } }
     end
-  end  
+  end
 
 end

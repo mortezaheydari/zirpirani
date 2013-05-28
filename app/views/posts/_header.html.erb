@@ -1,9 +1,15 @@
-<div class="postHeader" id="post<%= post.id.to_s %>">
+<% reload ||= false %>
+<%="<div class=\"postHeader\">".html_safe unless reload == true %>
     <div class="large-10 columns"><h3><%= post.title %></h3></div>
     <div class="large-2 columns">
         <div class="likeContainer">
-                <a href="#"><div class="like"></div></a>
-                <%= link_to content_tag("div", class: smiley_face_css(post)), send("smiley_face_path"), remote: true %>
+            <% if account_signed_in? %>
+                <%= link_to content_tag("div", "", class: smiley_face_css_for(post)), smiley_face_path(id: post.id), remote: true %>
+            <% else %>
+                <%= link_to content_tag("div", "", class: "like"), new_account_session_path %>
+            <% end %>
+                <!-- <a href="#"><div class="like"></div></a> -->
+
         </div>
     </div>
-</div>
+<%= "</div>".html_safe unless reload == true %>

@@ -153,9 +153,10 @@ div.likeContainer {
             &:hover {
                 background-position: 0px -100px;
             }
-            &:active {
-                background-position: 0px 0px;
-            }
+
+        }
+        .active {
+            background-position: 0px 0px !important;
         }
     }
 }

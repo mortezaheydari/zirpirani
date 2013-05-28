@@ -1,2 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row MarginTop">
+    <div class="large-8 push-4 columns rtl">
+        <div class="section-container tabs" data-section="tabs">
+          <section>
+            <p class="title" data-section-title><a href="#">اونايي كه پست <%=
+                if current_user?(@user)
+                    "کردم"
+                else
+                    "کردی"
+                end
+
+             %> (<%= current_user.posts.count %>)</a></p>
+            <div class="content" data-section-content>
+                <% @user.posts.each do |post| %>
+                    <%= render "posts/post", post: post %>
+                <% end -%>
+            </div>
+          </section>
+          <section>
+            <p class="title" data-section-title><a href="#">باحالا (<%= current_user.favorite_posts.count %>)</a></p>
+            <div class="content" data-section-content>
+                <% current_user.favorite_posts.each do |flagging| %>
+                    <%= render "posts/post", post: flagging.flaggable %>
+                <% end -%>
+            </div>
+          </section>
+        </div>
+    </div>
+    <%= render "shared/ad_box" %>
+</div>

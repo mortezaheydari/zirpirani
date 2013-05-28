@@ -10,7 +10,7 @@ module SessionsHelper
 
 	def smiley_face_css_for(this, user=current_user)
 		if user.flagged?(this, :favorite)
-			"liked"
+			"like active"
 		else
 			"like"
 		end
