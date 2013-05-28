@@ -1,4 +1,6 @@
 Zirpirani::Application.routes.draw do
+  resources :meems, as: :mime
+
   get "home/index"
   get "home/post_page"
 

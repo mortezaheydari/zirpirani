@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @meem.title %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @meem.image.image.url(:large), als: @meem.title) %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @meem.description %>
+</p>
+
+<%= link_to 'Edit', edit_meem_path(@meem) %> |
+<%= link_to 'Back', meems_path %>
