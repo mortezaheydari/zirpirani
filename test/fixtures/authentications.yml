@@ -1,0 +1,9 @@
+one:
+  account_id: 1
+  provider: MyString
+  uid: MyString
+
+two:
+  account_id: 1
+  provider: MyString
+  uid: MyString

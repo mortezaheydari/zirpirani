@@ -3,7 +3,7 @@ class Account < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_one :user, :dependent => :destroy
   accepts_nested_attributes_for :user, :allow_destroy => true
@@ -15,7 +15,7 @@ class Account < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: {with: VALID_EMAIL_REGEX}
 
-  # general devise and omniauth user methods
+  # devise and omniauth user methods
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end

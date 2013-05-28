@@ -112,6 +112,7 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.7.3)
     multipart-post (1.2.0)
+    nifty-generators (0.4.6)
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
     oauth (0.4.7)
@@ -242,6 +243,7 @@ DEPENDENCIES
   jquery-rails
   make_flaggable!
   mocha
+  nifty-generators
   omniauth-facebook
   omniauth-twitter
   paperclip (~> 3.0)

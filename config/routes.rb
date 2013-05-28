@@ -1,5 +1,7 @@
 Zirpirani::Application.routes.draw do
 
+  resources :authentications
+
   resources :posts
   resources :meems, as: :mime
 
@@ -7,7 +9,7 @@ Zirpirani::Application.routes.draw do
   get "home/post_page"
   get "home/meme_info"
 
-  devise_for :accounts
+  devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: 'registrations' }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
