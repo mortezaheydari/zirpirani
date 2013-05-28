@@ -35,6 +35,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    if @post.destroy
+        redirect_to root_path, :notice => 'Post Deleted'
+    end
   end
 
   def smiley_face

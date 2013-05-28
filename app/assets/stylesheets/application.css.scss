@@ -109,6 +109,14 @@ li.name {
     font-size:0.7em;
 }
 
+.DeletePost {
+    color: #D14;
+    &:hover {
+        color:#D14;
+        text-decoration: underline;
+    }
+}
+
 .meme {
     margin-bottom: 20px;
     @include clearfix;
