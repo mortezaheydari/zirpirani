@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/EppO/rolify.git
+  revision: 1a7c1af51962291b43db22f33f707e80b51343ee
+  specs:
+    rolify (3.3.0.rc4)
+
+GIT
   remote: git://github.com/cavneb/make_flaggable.git
   revision: 1b09b3bb8a778b5a8f7250c587d59a8e6c205be6
   specs:
@@ -182,7 +188,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (0.3.5)
-    rolify (3.2.0)
     rsolr (1.0.9)
       builder (>= 2.1.2)
     sass (3.2.9)
@@ -254,7 +259,7 @@ DEPENDENCIES
   pg (= 0.12.2)
   rails (= 3.2.9)
   recaptcha
-  rolify (>= 3.2.0)
+  rolify!
   sass-rails (~> 3.2.3)
   simple_form (>= 2.0.4)
   sqlite3

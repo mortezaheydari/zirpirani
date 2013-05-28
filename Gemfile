@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
 gem 'sunspot_rails'
 gem "cancan", ">= 1.6.8"
-gem "rolify", ">= 3.2.0"
+gem "rolify",        :git => "git://github.com/EppO/rolify.git"
 gem "simple_form", ">= 2.0.4"
 gem 'make_flaggable', :git => 'git://github.com/cavneb/make_flaggable.git'
 gem 'recaptcha', :require => 'recaptcha/rails'
