@@ -10,7 +10,7 @@
         <a href="#"><div class="large-6 small-6 tw_button">بده بغلی</div></a>
         <div class="large-12 columns postFooter">
 
-            <span class="smileCount">تعداد خنده: <%= post.favorite_count %></span>
+            <span class="smileCount">آمار خنده: <%= post.favorite_count %></span>
 
             <span class="left dateInfo"><%= time_ago_in_words(post.created_at) %> by <%= link_to post.owner.name, post.owner %> <%= link_to "Delete", post_path(post),:confirm => 'Are you sure?', method: :delete, class: "DeletePost" %></span>
         </div>
