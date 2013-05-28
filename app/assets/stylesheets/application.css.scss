@@ -69,6 +69,13 @@ background: #ddd;
     }
 }
 
+.panel {
+    background: $white !important;
+    border: #d8d8d8 1px solid;
+    @include clearfix;
+    @include box-shadow(0px 0px 1px 1px #d8d8d8);
+}
+
 // shared styles - End
 
 li.name {
@@ -76,6 +83,11 @@ li.name {
         padding: 0 !important;
 
     }
+}
+
+.meme {
+    margin-bottom: 20px;
+    @include clearfix;
 }
 
 

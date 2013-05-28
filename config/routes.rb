@@ -5,6 +5,7 @@ Zirpirani::Application.routes.draw do
 
   get "home/index"
   get "home/post_page"
+  get "home/meme_info"
 
   devise_for :accounts
 

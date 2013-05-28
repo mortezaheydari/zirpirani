@@ -5,4 +5,8 @@ class HomeController < ApplicationController
   def post_page
 
   end
+
+  def meme_info
+
+  end
 end
