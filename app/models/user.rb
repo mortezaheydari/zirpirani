@@ -8,5 +8,9 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_uniqueness_of :name, :on => :create, :message => "already taken"
-  
+
+  def favorite_posts
+    self.flaggings.with_flag(:favorite)
+  end
+
 end

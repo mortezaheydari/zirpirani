@@ -37,4 +37,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def smiley_face
+    @post = Post.find(params[:id])
+    current_user.unflag(@post, :favorite)
+
+    respond_to do |format|
+        format.js { render 'posts/smiley_face.js.erb', :locals => { post: @post, card_type: params[:card_type] } }
+    end
+  end  
+
 end

@@ -4,7 +4,12 @@ Zirpirani::Application.routes.draw do
   resources :users, only: [:show]
   resources :authentications
 
-  resources :posts
+  resources :posts do
+    member do
+      get 'smiley_face'
+    end
+  end  
+  
   resources :meems, as: :mime
 
   get "home/index"
