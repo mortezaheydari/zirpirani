@@ -1,2 +1,14 @@
 <h1>Post#new</h1>
 <p>Find me in app/views/post/new.html.erb</p>
+
+
+ <div class="row">
+    <div class="six mobile-four columns">
+    <h2>Create Item</h2>
+    <%= simple_form_for(@post, :html => { :method => :post, :class => 'custom form-vertical'}) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :title, :required => true %>
+            <%= p.file_field :image, class: "file button" %>
+    <% end %>
+    </div>
+</div>
