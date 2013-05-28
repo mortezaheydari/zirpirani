@@ -1,13 +1,7 @@
 <div class="row MarginTop">
     <div class="large-8 push-4 columns">
-      <% i = 0
-         while i<6 do %>
-            <%= render "post/post" %>
-      <% i = i + 1
-         end %>
+            <%= render @posts %>
     </div>
-    <div class="large-4 pull-8 columns hide-for-small">
-        <%= render "shared/sidebar_social" %>
-    </div>
+    <%= render "shared/sidebar" %>
 </div>
 

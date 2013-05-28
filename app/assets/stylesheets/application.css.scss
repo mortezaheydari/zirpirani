@@ -38,6 +38,15 @@ background: #ddd;
 
 }
 
+
+.clearfix {
+    @include clearfix;
+}
+
+.no-padding-right {
+    padding-right:0 !important;
+}
+
 .MarginTop {
     margin-top: 40px !important;
 }
@@ -83,6 +92,10 @@ li.name {
         padding: 0 !important;
 
     }
+}
+
+.dateInfo {
+    font-size:0.7em;
 }
 
 .meme {

@@ -1,7 +1,7 @@
 Zirpirani::Application.routes.draw do
 
-  get "users/show"
-
+  # get "users/show"
+  resources :users, only: [:show]
   resources :authentications
 
   resources :posts

@@ -1,0 +1,10 @@
+<% custom_image ||= nil %>
+    <div class="large-4 pull-8 columns">
+        <div class="panel">
+            <% if custom_image.nil? %>
+                <%= image_tag "trollface.jpg" %>
+            <% else %>
+                <%= image_tag custom_image %>
+            <% end -%>
+        </div>
+    </div>

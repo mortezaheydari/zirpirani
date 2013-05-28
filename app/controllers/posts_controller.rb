@@ -1,6 +1,6 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
 
-  before_filter :authenticate_account!  
+  before_filter :authenticate_account!
 
   def show
     @post = Post.find(params[:id])
@@ -11,12 +11,13 @@ class PostController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post)
+    @post = Post.new(params[:post])
+    @post.user_id = current_user.id
     if @post.save
       redirect_to @post, notice: "post created."
     else
       render new, alert: "There was a problem with creating the post."
-    end    
+    end
   end
 
   def edit
