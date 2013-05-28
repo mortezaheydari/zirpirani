@@ -8,6 +8,8 @@ class Account < ActiveRecord::Base
   has_one :user, :dependent => :destroy
   accepts_nested_attributes_for :user, :allow_destroy => true
 
+  has_many :authentications  
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :user, :user_attributes
   # attr_accessible :title, :body
