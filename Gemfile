@@ -14,6 +14,7 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'faker', '1.0.1'
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 gem 'nifty-generators'
+gem 'kaminari'
 
 # Rails – Twitter and Facebook Authentications with Omniauth and Devise
 # Source:	http://www.orhancanceylan.com/rails-twitter-and-facebook-authentications-with-omniauth-and-devise/
