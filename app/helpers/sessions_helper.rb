@@ -8,6 +8,14 @@ module SessionsHelper
 		end
 	end
 
+	def smiley_face_css_for(this, user=current_user)
+		if user.flagged?(this, :favorite)
+			"liked"
+		else
+			"like"
+		end
+	end
+
 	def toggle_favorite_card_button(this, user, options = {})
 		if user.flagged?(this, :favorite)
 			thumbs ="fav_active"

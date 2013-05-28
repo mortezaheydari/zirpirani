@@ -3,6 +3,7 @@
     <div class="large-2 columns">
         <div class="likeContainer">
                 <a href="#"><div class="like"></div></a>
+                <%= link_to content_tag("div", class: smiley_face_css(post)), send("smiley_face_path"), remote: true %>
         </div>
     </div>
 </div>
