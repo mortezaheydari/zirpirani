@@ -3,7 +3,7 @@
         <%= render "posts/header", post: post %>
     </div>
     <div class="large-12 columns">
-        <%= image_tag post.image.url(:large), als: post.title %>
+        <%= link_to image_tag(post.image.url(:large), als: post.title), post_path(post) %>
     </div>
     <div class="large-12 columns info">
         <a href="#"><div class="large-6 small-6 fb_button left">بده بغلی</div></a>

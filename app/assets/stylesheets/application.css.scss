@@ -94,6 +94,17 @@ li.name {
     }
 }
 
+.button-group {
+    margin-right:0 !important;
+    a {
+        margin-bottom:0 !important;
+    }
+    .active {
+        background-color: $white !important;
+    }
+
+}
+
 .dateInfo {
     font-size:0.7em;
 }

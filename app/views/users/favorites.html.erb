@@ -1,0 +1,39 @@
+<div class="row MarginTop">
+    <div class="large-8 push-4 columns rtl">
+        <div class="section-container tabs" data-section="tabs">
+
+            <div class="button-bar">
+              <ul class="button-group">
+                <li><%= link_to user_path(current_user), class: "button secondary" do %>
+                            اونايي كه پست <%=
+                                if current_user?(@user)
+                                    "کردم"
+                                else
+                                    "کردی"
+                                end
+
+                             %> (<%= current_user.posts.count %>)
+                         <% end -%>
+                 </li>
+                <li>
+                    <a href="#" class="button secondary active">باحالا (<%= @user.favorite_posts.size %>)</a>
+                </li>
+              </ul>
+            </div>
+            <% if current_user?(@user) %>
+
+                <div class="panel">
+                    <div class="content" data-section-content>
+                        <% @favorite_posts.each do |flagging| %>
+                            <%= render "posts/post", post: flagging.flaggable %>
+                        <% end -%>
+                    </div>
+                            <%= render "shared/paginate", this: @favorite_posts %>
+                </div>
+
+            <% end -%>
+
+        </div>
+    </div>
+    <%= render "shared/ad_box" %>
+</div>

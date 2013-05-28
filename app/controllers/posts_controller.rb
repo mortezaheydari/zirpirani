@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_account!
 
   def show
-    @post = Post.find(params[:id]).page(params[:page]).per(20)
+    @post = Post.find(params[:id])
   end
 
   def new
