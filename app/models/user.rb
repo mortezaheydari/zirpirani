@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
   end
 
   def before_change(role)
-    redirect_to root_path unless current_user && current_user.has_role? :admin
-  end 
+    current_user ||= ""
+    return false unless !current_user.empty? && current_user.has_role?(:admin)
+  end
 
 end
