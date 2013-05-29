@@ -19,6 +19,8 @@ Zirpirani::Application.routes.draw do
   get "home/index"
   get "home/post_page"
   get "home/meme_info"
+  get "home/davari"
+
 
   devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: 'registrations' }
 

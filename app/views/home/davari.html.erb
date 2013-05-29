@@ -1,0 +1,14 @@
+<div class="row MarginTop">
+    <div class="large-8 push-4 columns">
+            <%= render @posts %>
+    </div>
+    <%= render "shared/sidebar" %>
+
+</div>
+
+<div class="row">
+    <div class="large-8 push-4 columns">
+        <%= render "shared/paginate", this: @posts %>
+    </div>
+</div>
+
