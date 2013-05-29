@@ -2,6 +2,16 @@
             <div class="large-12 columns">
                 <div class="commentSection">
 					<!-- comments go here -->
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=632971256717717";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                    </script>
+                  <div class="fb-comments large-12 columns" data-width="" data-num-posts="10" data-colorscheme="light"></div>
                 </div>
             </div>
         </div>

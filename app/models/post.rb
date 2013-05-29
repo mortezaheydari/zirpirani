@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :user_id, :image
+  attr_accessible :title, :user_id, :image, :source
 
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
   make_flaggable :favorite
@@ -8,9 +8,9 @@ class Post < ActiveRecord::Base
   validates_attachment :image,
 		:presence => true,
 		:content_type => { :content_type =>  ['image/png', 'image/jpg', 'image/jpeg'] },
-		:size => { :in => 0..10000.kilobytes }  
+		:size => { :in => 0..10000.kilobytes }
 
-  has_attached_file :image, :styles => {:large => "650>"}		
+  has_attached_file :image, :styles => {:large => "650>"}
 
 
   def favorite_count
@@ -19,6 +19,6 @@ class Post < ActiveRecord::Base
       else
           self.flaggings.with_flag(:favorite).count
       end
-  end  
+  end
 
 end

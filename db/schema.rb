@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528140600) do
+ActiveRecord::Schema.define(:version => 20130529075237) do
 
   create_table "accounts", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20130528140600) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "approved",           :default => 0
+    t.string   "source"
   end
 
   create_table "roles", :force => true do |t|

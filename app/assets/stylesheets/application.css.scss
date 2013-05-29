@@ -94,6 +94,9 @@ li.name {
     }
 }
 
+.fb-comments, .fb-comments iframe[style] { width: 100% !important;}
+.fb-comments, .fb-comments span[style] { width: 100% !important;}
+
 .button-group {
     margin-right:0 !important;
     a {

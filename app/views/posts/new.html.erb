@@ -5,6 +5,7 @@
                 <%= f.error_notification %>
                 <%= f.input :title, :required => true %>
                 <%= f.file_field :image, class: "file text" %> <br> <br>
+                <%= f.input :source, :required => true, placeholder: "http://www.example.com" %>
                 <%= f.submit 'بده بره', class: "button grey submitBtn homeBtn right" %>
         <% end %>
     </div>
