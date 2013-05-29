@@ -8,6 +8,7 @@ Zirpirani::Application.routes.draw do
     end
   resources :authentications
 
+  resources :meems
   resources :posts
 
       get 'smiley_face', controller: :posts

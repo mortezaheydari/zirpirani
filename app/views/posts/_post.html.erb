@@ -13,10 +13,11 @@
             <span class="smileCount">آمار خنده: <%= post.favorite_count %></span>
 
             <span class="left dateInfo"><%= time_ago_in_words(post.created_at) %> by <%= link_to(post.owner.name, post.owner) %>
-
-                <% if current_user && current_user.has_role?(:admin) %>
-                    <%= link_to "Delete", post_path(post),:confirm => 'Are you sure?', method: :delete, class: "DeletePost"  %>
-                <% end -%>
+                <% if account_signed_in? %>
+                     <% if current_user && current_user.has_role?(:admin) %>
+                        <%= link_to "Delete", post_path(post),:confirm => 'Are you sure?', method: :delete, class: "DeletePost"  %>
+                    <% end -%>
+                <% end %>
                 </span>
         </div>
     </div>

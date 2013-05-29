@@ -8,6 +8,6 @@ class HomeController < ApplicationController
   end
 
   def meme_info
-
+    @memes = Meem.order("created_at desc").page(params[:page]).per(20)
   end
 end
