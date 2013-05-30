@@ -2,11 +2,6 @@
 @import "foundation";
 @import "foundation_and_overrides";
 
-
-@include font-face(dastnevis, '/fonts/dastnevis', $asset-pipeline: true);
-@include font-face(terafik, '/fonts/terafik', $asset-pipeline: true);
-@include font-face(terafikb, '/fonts/terafikb', $asset-pipeline: true);
-
 // variables
 
 $Black: #1a1a1a;
@@ -40,26 +35,7 @@ $white:#f8f8f8;
 
 body {
 background: #ddd;
-font-family: 'dastnevis';
-}
 
-h2, h1 {
-font-family: 'dastnevis';
-
-}
-
-
-.postHeader h3 {
-font-family: 'terafikb';
-font-weight: normal;
-}
-
-.dateInfo  {
-    font-family: $helvetica;
-}
-
-.meme p {
-    font-family: 'terafik';
 }
 
 
@@ -111,12 +87,12 @@ font-weight: normal;
 
 // shared styles - End
 
-// li.name {
-//     a {
-//         padding: 0 !important;
+li.name {
+    a {
+        padding: 0 !important;
 
-//     }
-// }
+    }
+}
 
 .fb-comments, .fb-comments iframe[style] { width: 100% !important;}
 .fb-comments, .fb-comments span[style] { width: 100% !important;}
@@ -229,7 +205,6 @@ nav {
     border-right: solid 1px $blackDivider;
     a {
         width:100% !important;
-        text-align: right;
     }
 }
 

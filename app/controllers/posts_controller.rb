@@ -44,11 +44,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     current_user.toggle_flag(@post, :favorite)
 
-    if current_user.has_role?(:admin)
-        @post.approved = 1
-        @post.save
-    end
-
     respond_to do |format|
         format.js { render 'posts/smiley_face.js.erb', :locals => { post: @post } }
     end

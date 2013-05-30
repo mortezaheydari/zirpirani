@@ -5,9 +5,9 @@
                 <%= f.error_notification %>
                 <%= f.input :title, :required => true %>
                 <%= f.file_field :image, class: "file text" %> <br> <br>
-                <%= f.input :source, placeholder: "http://www.example.com" %>
+                <%= f.input :source, :required => true, placeholder: "http://www.example.com" %>
                 <%= f.submit 'بده بره', class: "button grey submitBtn homeBtn right" %>
         <% end %>
     </div>
-    <%= render "shared/toolbox" %>
+    <%= render "shared/ad_box" %>
 </div>

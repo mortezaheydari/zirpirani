@@ -1,8 +1,4 @@
 class MeemsController < ApplicationController
-  include SessionsHelper
-
-    before_filter :before_change, only: [:new, :edit, :create, :destroy, :update]
-
 
   def index
     @meems = Meem.all

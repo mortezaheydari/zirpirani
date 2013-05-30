@@ -3,10 +3,9 @@
     <!-- Title Area -->
     <li class="name">
       <h1>
-        <%= link_to "زیرپیرنی", root_path %>
-        <%# link_to root_path do %>
-            <!-- <div class="topLogo"></div> -->
-        <%# end -%>
+        <%= link_to root_path do %>
+            <div class="topLogo"></div>
+        <% end -%>
     </h1>
     </li>
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
@@ -15,7 +14,26 @@
 
   <section class="top-bar-section">
     <!-- Left Nav Section -->
+    <% if account_signed_in? %>
+        <ul>
+            <li>
+                <%= link_to "صفحه شخصي", user_path(current_user) %>
+            </li>
+          <li class="divider"></li>
+          <li><%= link_to "Sign Out", destroy_account_session_path, method: :DELETE %></li>
+        </ul>
+    <% else %>
+        <ul>
+            <li>
+                <%= link_to "ورود به سايت", new_account_session_path %>
+            </li>
+          <li class="divider"></li>
+        </ul>
+    <% end %>
+
     <ul class="left">
+      <li class="divider"></li>
+      <li><%= link_to "پست زور وده", new_post_path %></li>
       <li class="divider"></li>
       <li>
         <%= link_to "میمولوژی", home_meme_info_path %>
