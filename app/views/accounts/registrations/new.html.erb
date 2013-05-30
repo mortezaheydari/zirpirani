@@ -4,16 +4,16 @@
 
         <div class="row">
             <div class="large-10 large-centered columns">
-        <h2>Sign up</h2>
+        <h2>ثبت نام</h2>
         <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
           <%= f.error_notification %>
           <%= display_base_errors resource %>
             <%= f.fields_for :user do |user_form| %>
-                <%= user_form.input :name, label: "Username", :required => true %>
+                <%= user_form.input :name, label: "نام مستعار", :required => true %>
             <% end %>
-          <%= f.input :email, :autofocus => true,  :required => true %>
-          <%= f.input :password, :required => true %>
-          <%= f.input :password_confirmation, :required => true %>
+          <%= f.input :email, label: "ایمیل", :autofocus => true,  :required => true %>
+          <%= f.input :password, label: "پسورد", :required => true %>
+          <%= f.input :password_confirmation, label: "تکرار پسورد", :required => true %>
 
 <%=
 # tbd 20130429 - Captcha for devise
@@ -26,13 +26,13 @@ recaptcha_tags
 
 %>
 
-          <%= f.button :submit, 'Sign up', :class => 'btn-primary button left' %>
+          <%= f.button :submit, 'تمام شد رفت', :class => 'btn-primary button left' %>
         <% end %>
         </div>
 <hr>
             <div class="large-10 large-centered columns">
                 <%= link_to account_omniauth_authorize_path(:facebook) do %>
-                    <div class="large-12 large-centered fb_button">Sign in with Facebook</div>
+                    <div class="large-12 large-centered fb_button">ثبت نام از طریق فیسبوک</div>
                 <% end -%>
             </div>
 <hr>
@@ -40,7 +40,7 @@ recaptcha_tags
             <div class="large-10 large-centered columns">
 
                 <%- if controller_name != 'sessions' %>
-                    <%= link_to "Sign in", new_session_path(resource_name) %><br />
+                    <%= link_to "ورود به وبسایت", new_session_path(resource_name) %><br />
                 <% end -%>
 
             </div>
