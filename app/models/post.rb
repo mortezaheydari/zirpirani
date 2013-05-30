@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :user_id, :image, :source
+  attr_accessible :title, :user_id, :image, :source, :approved
 
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
   make_flaggable :favorite

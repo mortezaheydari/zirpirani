@@ -29,6 +29,13 @@ module SessionsHelper
 		user == current_user
 	end
 
+          def before_change
+            # unless current_user
+            #     current_user ||= nil
+            # end
+            redirect_to root_path unless !current_user.nil? && current_user.has_role?(:admin)
+          end
+
 	private
 		def current_user=(user)
 			@current_user = user

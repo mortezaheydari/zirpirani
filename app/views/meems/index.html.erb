@@ -1,5 +1,5 @@
  <div class="row MarginTop">
-    <div class="large-12 columns">
+    <div class="large-8 push-4 columns">
         <div class="panel">
 
 <h1>Listing meems</h1>
@@ -17,8 +17,6 @@
 <% @meems.each do |meem| %>
   <tr>
     <td><%= meem.title %></td>
-    <td><%= meem.description %></td>
-    <td><%= meem.image %></td>
     <td><%= link_to 'Show', meem %></td>
     <td><%= link_to 'Edit', edit_meem_path(meem) %></td>
     <td><%= link_to 'Destroy', meem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +28,7 @@
 
 <%= link_to 'New Mime', new_meem_path %>
 
-</div></div></div>
+</div></div>
+
+        <%= render "shared/toolbox" %>
+</div>
