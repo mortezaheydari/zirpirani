@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
-gem 'sqlite3'
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
 gem 'sunspot_rails'
@@ -41,6 +40,7 @@ end
 
 group :development do
 	gem 'sunspot_solr'
+	gem 'sqlite3'
 end
 
 group :test do
@@ -51,7 +51,7 @@ group :test do
 end
 
 group :production do
-	#gem 'pg', '0.12.2'
+	gem 'pg', '0.12.2'
 	gem 'thin'
 	gem 'sunspot_solr'
 end
