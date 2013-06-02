@@ -40,7 +40,7 @@ end
 
 group :development do
 	gem 'sunspot_solr'
-	gem 'sqlite3'
+	# gem 'sqlite3'
 end
 
 group :test do
