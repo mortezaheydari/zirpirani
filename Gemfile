@@ -16,6 +16,9 @@ gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 gem 'nifty-generators'
 gem 'kaminari'
 
+gem 'capistrano'
+gem 'unicorn'
+
 # Rails – Twitter and Facebook Authentications with Omniauth and Devise
 # Source:	http://www.orhancanceylan.com/rails-twitter-and-facebook-authentications-with-omniauth-and-devise/
 	gem "devise", ">= 2.1.2"
