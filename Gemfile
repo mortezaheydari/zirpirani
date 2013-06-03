@@ -16,6 +16,7 @@ gem 'nifty-generators'
 gem 'kaminari'
 
 gem 'capistrano'
+gem 'capistrano-recipes'
 gem 'unicorn'
 
 # Rails – Twitter and Facebook Authentications with Omniauth and Devise
@@ -52,6 +53,6 @@ end
 
 group :production do
 	gem 'pg', '0.12.2'
-	gem 'thin'
+	# gem 'thin'
 	gem 'sunspot_solr'
 end
