@@ -1,4 +1,4 @@
-root = "/home/root/apps/zirpirani/current"
+root = "/home/deployer/apps/zirpirani/current"
 
 working_directory root
 
