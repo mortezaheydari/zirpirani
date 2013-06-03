@@ -19,4 +19,7 @@ class HomeController < ApplicationController
   def davari
     @posts = Post.where("approved = 0").order("created_at desc").page(params[:page]).per(20)
   end
+
+  def test
+  end
 end
