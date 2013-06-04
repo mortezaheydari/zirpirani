@@ -13,6 +13,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
+    @post.approved = 1 if current_user.has_role?(:admin)
+
     if @post.save
       redirect_to @post, notice: "post created."
     else
