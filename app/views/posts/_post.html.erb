@@ -2,7 +2,7 @@
     <div class="large-12 columns">
         <%= render "posts/header", post: post %>
     </div>
-    <div class="large-12 columns">
+    <div class="large-12 columns postImg">
         <%= link_to image_tag(post.image.url(:large), als: post.title), post_path(post) %>
     </div>
     <div class="large-12 columns info">
