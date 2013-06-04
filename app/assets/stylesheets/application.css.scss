@@ -55,7 +55,9 @@ font-weight: normal;
 }
 
 .postImg {
-    width: 100%;
+    img {
+        width: 100%;
+    }
 }
 
 .dateInfo  {
