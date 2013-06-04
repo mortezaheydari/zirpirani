@@ -5,7 +5,7 @@ Devise.setup do |config|
   # Rails – Twitter and Facebook Authentications with Omniauth and Devise
   # Source: http://www.orhancanceylan.com/rails-twitter-and-facebook-authentications-with-omniauth-and-devise/
   # config.omniauth :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
-  config.omniauth :facebook, "166372286870052", "8134541cf96329370ffd2cfc69015ed8", {:scope => 'publish_stream, email'}
+  config.omniauth :facebook, "427836113928855", "05b052d361e968d0d3050270816b5d55", {:scope => 'publish_stream, email'}
   #
 
   # ==> Mailer Configuration
