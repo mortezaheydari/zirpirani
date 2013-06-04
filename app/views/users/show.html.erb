@@ -11,9 +11,9 @@
                                 "کردی"
                             end
 
-                         %> (<%= current_user.posts.count %>)</a></li>
+                         %>(<%= current_user.posts.count %>)</a></li>
                 <% if current_user?(@user) %>
-                    <li><%= link_to "باحالا (#{@user.favorite_posts.count})", favorites_user_path, class: "button secondary" %></li>
+                    <li><%= link_to "باحالا(#{@user.favorite_posts.count})", favorites_user_path, class: "button secondary" %></li>
                 <% end %>
               </ul>
             </div>
