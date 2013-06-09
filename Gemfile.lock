@@ -79,7 +79,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
-    daemons (1.1.9)
     database_cleaner (1.0.1)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
@@ -90,7 +89,6 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
-    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -237,10 +235,6 @@ GEM
       nokogiri
       sunspot (= 2.0.0)
     sunspot_solr (2.0.0)
-    thin (1.5.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.12)
@@ -300,7 +294,6 @@ DEPENDENCIES
   sqlite3
   sunspot_rails
   sunspot_solr
-  thin
   twitter
   uglifier (= 1.2.3)
   unicorn
