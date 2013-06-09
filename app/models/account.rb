@@ -31,7 +31,7 @@ class Account < ActiveRecord::Base
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'],
     :uid => omni['uid'],
-    :token => omni['credentials']['token'],
+    # :token => omni['credentials']['token'],
     :token_secret => omni['credentials']['secret'])
   end
 
