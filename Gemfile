@@ -14,6 +14,7 @@ gem 'faker', '1.0.1'
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 gem 'nifty-generators'
 gem 'kaminari'
+gem "figaro", ">= 0.5.0"
 
 gem 'capistrano'
 gem 'capistrano-recipes'
