@@ -3,7 +3,6 @@
 @import "foundation_and_overrides";
 
 
-@include font-face(dastnevis, '/fonts/dastnevis', $asset-pipeline: true);
 @include font-face(terafik, '/fonts/terafik', $asset-pipeline: true);
 @include font-face(terafikb, '/fonts/terafikb', $asset-pipeline: true);
 
@@ -40,11 +39,11 @@ $white:#f8f8f8;
 
 body {
 background: #ddd;
-font-family: 'dastnevis';
+font-family: 'terafik';
 }
 
 h2, h1 {
-font-family: 'dastnevis';
+font-family: 'terafik';
 
 }
 
