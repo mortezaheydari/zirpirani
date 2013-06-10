@@ -21,6 +21,9 @@ Zirpirani::Application.routes.draw do
   get "home/meme_info"
   get "home/davari"
 
+  get 'remove_admin', controller: :users
+  get 'add_admin', controller: :users
+  get 'users/list'
 
   devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: 'registrations' }
 
