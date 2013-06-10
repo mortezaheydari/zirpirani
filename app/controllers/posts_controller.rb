@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 
-    if @post.approved == 1 
+    if (@post.approved == 1)  || (!current_user.nil? && @post.owner == current_user)
       render :show
     else
       before_change

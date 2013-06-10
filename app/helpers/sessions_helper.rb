@@ -33,7 +33,7 @@ module SessionsHelper
             # unless current_user
             #     current_user ||= nil
             # end
-            redirect_to(root_path, alert: 'DER VAAS AN EROR MI FEREND?') unless !current_user.nil? && current_user.has_role?(:admin)
+            redirect_to(root_path, alert: 'DER VAAS AN EROR MY FEREND!?') unless !current_user.nil? && current_user.has_role?(:admin)
           end
 
 	def current_user_is_admin?
