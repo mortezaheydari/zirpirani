@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     else
       before_change
     end
-    
+
   end
 
   def new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-    @post.approved = 1 if current_user.has_role?(:admin)
+    @post.approved = 1 if current_user_is_admin?
 
     if @post.save
       redirect_to @post, notice: "post created."
