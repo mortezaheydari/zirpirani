@@ -31,7 +31,6 @@ class UsersController < ApplicationController
               @user.save
               redirect_to list_path, success: "administration added to #{@user.name}"
             else
-              return false
               redirect_to list_path, alert: "administration error: #{@user.name}"
             end
   end
