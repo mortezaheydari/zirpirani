@@ -4,6 +4,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+
+    if @post.approved == 1 
+      render :show
+    else
+      before_change
+    end
+    
   end
 
   def new

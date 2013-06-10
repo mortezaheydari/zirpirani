@@ -6,8 +6,12 @@
         <%= link_to image_tag(post.image.url(:large), als: post.title), post_path(post) %>
     </div>
     <div class="large-12 columns info">
-        <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<%= "http://zirpirani.com" + post_path(post) %>&p[images][0]=<%= "http://zirpirani.com" + post.image.url(:large) %>&p[title]=<%= ERB::Util.url_encode post.title %>" target="_blank" ><div class="large-6 small-6 fb_button left">بده بغلی</div></a>
-        <a href="http://twitter.com/share?text=<%= ERB::Util.url_encode post.title %>&url=<%= "http://zirpirani.com" + post_path(post) %>" target="_blank"><div class="large-6 small-6 tw_button">بده بغلی</div></a>
+
+        <% if post.approved == 1 || current_user_is_admin? do %>
+            <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=<%= "http://zirpirani.com" + post_path(post) %>&p[images][0]=<%= "http://zirpirani.com" + post.image.url(:large) %>&p[title]=<%= ERB::Util.url_encode post.title %>" target="_blank" ><div class="large-6 small-6 fb_button left">بده بغلی</div></a>
+            <a href="http://twitter.com/share?text=<%= ERB::Util.url_encode post.title %>&url=<%= "http://zirpirani.com" + post_path(post) %>" target="_blank"><div class="large-6 small-6 tw_button">بده بغلی</div></a>
+        <% end %>
+
         <div class="large-12 columns postFooter">
 
             <span class="smileCount">آمار خنده: <%= post.favorite_count %></span>
@@ -18,7 +22,7 @@
                         <%= link_to "Delete", post_path(post),:confirm => 'Are you sure?', method: :delete, class: "DeletePost"  %>
                     <% end -%>
                 <% end %>
-                </span>
+            </span>
         </div>
     </div>
 </div>
