@@ -15,7 +15,16 @@
           <%= f.input :password, label: "پسورد", :required => true %>
           <%= f.input :password_confirmation, label: "تکرار پسورد", :required => true %>
 
-          <%= recaptcha_tags%>
+<%=
+# tbd 20130429 - Captcha for devise
+# to be uncommented when website goes online
+# https://github.com/plataformatec/devise/wiki/How-To:-Use-Recaptcha-with-Devise
+# https://www.google.com/recaptcha/admin/create
+=begin
+recaptcha_tags
+=end
+
+%>
 
           <%= f.button :submit, 'تمام شد رفت', :class => 'btn-primary button left' %>
         <% end %>
