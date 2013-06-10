@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   include SessionsHelper
-  before_filter :authenticate_account!
+  before_filter :authenticate_account!, except: :show
 
   def show
     @post = Post.find(params[:id])
