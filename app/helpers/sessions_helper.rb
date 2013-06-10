@@ -40,13 +40,21 @@ module SessionsHelper
 		!current_user.nil? && current_user.has_role?(:admin)
 	end
 
+            def current_user_is_super_admin?
+                !current_user.nil? && current_user.has_role?(:super_admin)
+            end
+
 	private
 		def current_user=(user)
 			@current_user = user
 		end
 
 		def current_user
+                            if current_account.nil?
+                                return nil
+                            else
 			@current_user ||= current_account.user
+                            end
 		end
 
 end
