@@ -15,11 +15,11 @@
 	<td><%= user.roles %></td>
 	<td><%= user.account.created_at %></td>
 	<td><%= user.account.last_sign_in_ip %></td>
-	<td> 
+	<td>
 	<% if user.has_role? :admin %>
-		<%= link_to "remove admin", user_remove_admin_path(user) %>
+		<%= link_to "Remove admin", user_remove_admin_path(user), class: "button alert" %>
 	<% else %>
-		<%= link_to "remove admin", user_add_admin_path(user) %>
+		<%= link_to "Add admin", user_add_admin_path(user), class: "button" %>
 	</td>
 <tr>
 </table>

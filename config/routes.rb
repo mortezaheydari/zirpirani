@@ -23,7 +23,7 @@ Zirpirani::Application.routes.draw do
 
   get 'remove_admin', controller: :users
   get 'add_admin', controller: :users
-  get 'users/list'
+  get 'list', controller: :users
 
   devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: 'registrations' }
 
