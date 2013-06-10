@@ -25,7 +25,14 @@ class UsersController < ApplicationController
 
   def add_admin
 	@user = User.find(params[:id])
-  	make_admin(@user) unless @user.nil?
-  	redirect_to list_path, success: "administration added to #{@user.name}"
+            current_user ||= ""
+            if !current_user.empty? && current_user.has_role?(:super_admin) && !@user.nil?
+              @user.add_role :admin
+              @user.save
+              redirect_to list_path, success: "administration added to #{@user.name}"
+            else
+              return false
+              redirect_to list_path, alert: "administration error: #{@user.name}"
+            end
   end
 end
