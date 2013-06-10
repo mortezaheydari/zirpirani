@@ -1,27 +1,44 @@
-<table>
-    <tr>
-        <td>name</td>
-        <td>email</td>
-        <td>roles</td>
-        <td>created_at</td>
-        <td>last_sign_in_ip</td>
-        <td></td>
-    <tr>
+<div class="row">
+    <div class="large-12 columns" style="direction:ltr;">
+        <table style="text-align:left;">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Roles</td>
+                    <td>Created at</td>
+                    <td>Last signed in IP</td>
+                    <td>Actions</td>
+                <tr>
+            </thead>
+            <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.account.email %></td>
+                        <td>
+                            <% user.roles.each do |role| %>
+                                | <%= role.name %>
+                            <% end -%>
+                        </td>
+                        <td><%= user.account.created_at %></td>
+                        <td><%= user.account.last_sign_in_ip %></td>
+                        <td>
+                        <% if user.has_role? :admin %>
+                            <%= link_to "Remove admin", remove_admin_path(id: user.id), class: "button tiny alert" %>
+                        <% else %>
+                            <%= link_to "Add admin", add_admin_path(id: user.id), class: "button tiny" %>
+                        <% end -%>
 
-    <% @users.each do |user| %>
-        <tr>
-            <td><%= user.name %></td>
-            <td><%= user.account.email %></td>
-            <td><%= user.roles %></td>
-            <td><%= user.account.created_at %></td>
-            <td><%= user.account.last_sign_in_ip %></td>
-            <td>
-            <% if user.has_role? :admin %>
-            	<%= link_to "Remove admin", remove_admin_path(id: user.id), class: "button alert" %>
-            <% else %>
-            	<%= link_to "Add admin", add_admin_path(id: user.id), class: "button" %>
-            <% end -%>
-            </td>
-        <tr>
-    <% end %>
-</table>
+                        <% if user.has_role? :blocked %>
+                            <%= link_to "Unblock", unblock_path(id: user.id), class: "button tiny" %>
+                        <% else %>
+                            <%= link_to "Block", block_path(id: user.id), class: "button tiny alert" %>
+                        <% end -%>
+                        </td>
+                    <tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

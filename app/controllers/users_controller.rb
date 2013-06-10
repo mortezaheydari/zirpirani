@@ -19,19 +19,42 @@ class UsersController < ApplicationController
 
   def remove_admin
 	@user = User.find(params[:id])
-  	kick_admin(@user) unless @user.nil?
-  	redirect_to list_path, success: "administration removed from #{user.name}"
+            if current_user.has_role?(:super_admin) && !@user.nil?
+              @user.remove_role :admin
+              redirect_to list_path, success: "administration removed from #{@user.name}"
+            else
+              redirect_to list_path, alert: "administration error: #{@user.name}"
+            end
   end
 
   def add_admin
 	@user = User.find(params[:id])
-            current_user ||= ""
-            if !current_user.empty? && current_user.has_role?(:super_admin) && !@user.nil?
+            if current_user.has_role?(:super_admin) && !@user.nil?
               @user.add_role :admin
-              @user.save
               redirect_to list_path, success: "administration added to #{@user.name}"
             else
               redirect_to list_path, alert: "administration error: #{@user.name}"
             end
   end
+
+  def block
+    @user = User.find(params[:id])
+            if current_user.has_role?(:super_admin) && !@user.nil?
+              @user.add_role :blocked
+              redirect_to list_path, success: "#{@user.name} blocked"
+            else
+              redirect_to list_path, alert: "error blocking #{@user.name}"
+            end
+  end
+
+  def unblock
+    @user = User.find(params[:id])
+            if current_user.has_role?(:super_admin) && !@user.nil?
+              @user.remove_role :blocked
+              redirect_to list_path, success: "#{@user.name} unblock"
+            else
+              redirect_to list_path, alert: "error unblocking #{@user.name}"
+            end
+  end
+
 end
