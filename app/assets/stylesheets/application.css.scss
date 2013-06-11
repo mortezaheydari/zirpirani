@@ -93,6 +93,22 @@ font-weight: normal;
     .top-bar .toggle-topbar.menu-icon {direction: ltr; left:0 !important;}
 }
 
+@media only screen and (min-width: 768px) {
+    .topLogo {
+        float: right;
+    }
+    .top-bar .toggle-topbar.menu-icon a span { left:-25px !important;}
+    .top-bar .toggle-topbar.menu-icon {direction: ltr; left:0 !important;}
+}
+
+@media only screen and (min-width: 320px) {
+    .topLogo {
+        float: right;
+    }
+    .top-bar .toggle-topbar.menu-icon a span { left:-25px !important;}
+    .top-bar .toggle-topbar.menu-icon {direction: ltr; left:0 !important;}
+}
+
 .fb_button {
     @include social_button;
     background-position: 0 -60px;
