@@ -27,7 +27,7 @@ Zirpirani::Application.routes.draw do
   get 'unblock', controller: :users
   get 'list', controller: :users
 
-  devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: "registrations", sessions: "sessions" }
+  devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: "registrations"}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
