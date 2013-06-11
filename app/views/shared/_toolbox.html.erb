@@ -5,13 +5,11 @@
             <hr class="show-for-small">
             <%= link_to "صفحه شخصي", user_path(current_user), id: "ProfileLink" %>
             <hr>
-            <% if account_signed_in? %>
-                <% if current_user && current_user.has_role?(:admin) %>
-                    <%= link_to "میم جدید", new_meem_path %>
-                    <hr>
-                    <%= link_to "صندلی داوری", home_davari_path %>
-                    <hr>
-                <% end -%>
+            <% if current_user && current_user.has_role?(:admin) %>
+                <%= link_to "میم جدید", new_meem_path %>
+                <hr>
+                <%= link_to "صندلی داوری", home_davari_path %>
+                <hr>
             <% end -%>
             <%= link_to "پست جدید", new_post_path, id: "newPostLink" %>
             <hr>
