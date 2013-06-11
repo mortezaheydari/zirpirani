@@ -29,6 +29,11 @@ Zirpirani::Application.routes.draw do
 
   devise_for :accounts, controllers: { omniauth_callbacks: "authentications", registrations: "registrations"}
 
+  resources :social_feeds
+  match '/feed' => 'social_feeds#feed',
+        :as => :feed,
+        :defaults => { :format => 'atom' }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
