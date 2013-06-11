@@ -48,4 +48,11 @@ class Account < ActiveRecord::Base
   end
   #
 
+  # overriding active_for_authentication? to prevent "blocked" users from signing in
+
+  def active_for_authentication?
+    super && !user.has_role?(:blocked)
+  end
+
+
 end
