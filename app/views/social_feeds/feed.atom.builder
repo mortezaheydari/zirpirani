@@ -8,8 +8,11 @@ atom_feed :language => 'en-US' do |feed|
     feed.entry( post ) do |entry|
       entry.url post_url(post)
       entry.title post.title
-      entry.image ("http://zirpirani.com" + post.image.url(:large))
-
+      entry.image do |image|
+        image.title post.title
+        image.url("http://zirpirani.com" + post.image.url(:large))
+        image.link post_url(post)
+      end
       # the strftime is needed to work with Google Reader.
       entry.updated(post.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
 
