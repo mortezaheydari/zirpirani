@@ -158,15 +158,10 @@ font-weight: normal;
 
 .topLogo {
     background: url('logo-top.png') no-repeat;
-    @include background-size(48px, 45px);
-    width: 48px;
+    @include background-size(138px, 45px);
+    background-position: 0 4px;
+    width: 138px;
     height: 45px;
-    &:hover {
-        background: url('logo-top-hover.png') no-repeat;
-        @include background-size(149px, 45px);
-        width: 149px;
-        height: 45px;
-    }
 }
 
 .postHeader {
