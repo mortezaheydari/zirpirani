@@ -8,7 +8,7 @@ atom_feed :language => 'en-US' do |feed|
     feed.entry( post ) do |entry|
       entry.url post_url(post)
       entry.title post.title
-      entry.image post.image.url(:large)
+      entry.image ("http://zirpirani.com" + post.image.url(:large))
 
       # the strftime is needed to work with Google Reader.
       entry.updated(post.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
