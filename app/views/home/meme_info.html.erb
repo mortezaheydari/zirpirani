@@ -3,8 +3,15 @@
         <div class="panel">
             <% @memes.each do |meme| %>
                 <%= render "shared/meme", meme: meme %>
+                <%= link_to "Edit", edit_meem_path(meme) %>
             <% end -%>
         </div>
     </div>
         <%= render "shared/toolbox" %>
+</div>
+
+<div class="row">
+    <div class="large-8 push-4 columns">
+        <%= render "shared/paginate", this: @memes %>
+    </div>
 </div>
