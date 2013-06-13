@@ -7,4 +7,10 @@
                     <p><%= meme.description %></p>
                 </div>
             </div>
+        <% if account_signed_in? %>
+            <% if current_user && current_user.has_role?(:admin) %>
+                <%= link_to "Edit", edit_meem_path(meme) if  %>
+            <% end -%>
+       <% end -%>
+
 <hr>

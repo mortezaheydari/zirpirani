@@ -3,7 +3,6 @@
         <div class="panel">
             <% @memes.each do |meme| %>
                 <%= render "shared/meme", meme: meme %>
-                <%= link_to "Edit", edit_meem_path(meme) %>
             <% end -%>
         </div>
     </div>
