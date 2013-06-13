@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
 
   def index
-    @posts = Post.where("approved = 1").order("created_at desc").page(params[:page]).per(20)
+    @posts = Post.where("approved = 1").order("updated_at desc").page(params[:page]).per(20)
   end
 
   def post_page
