@@ -15,7 +15,7 @@
 
 <% @meems.each do |meem| %>
   <tr>
-    <td><%= image_tag(meme.image.url(:medium), als: meme.title %></td>
+    <td><%= image_tag(meme.image.url(:medium), als: meme.title) %></td>
     <td><%= meem.title %></td>
     <td><%= link_to 'Show', meem %></td>
     <td><%= link_to 'Edit', edit_meem_path(meem) %></td>
