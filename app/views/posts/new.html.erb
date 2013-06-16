@@ -1,3 +1,20 @@
+ <script type="text/javascript">
+
+MultipartEntity multipartEntity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
+    for (NameValuePair nameValuePair : nameValuePairs) {
+        if (nameValuePair.getName().equalsIgnoreCase("image")) {
+                File imgFile = new File(nameValuePair.getValue());
+                FileBody fileBody = new FileBody(imgFile, "image/jpeg");
+                multipartEntity.addPart("post[image]", fileBody);
+        } else {
+                multipartEntity.addPart("post[" + nameValuePair.getName() + "]", new StringBody(nameValuePair.getValue()));
+        }                   
+    }
+httpPost.setEntity(multipartEntity);
+HttpResponse response = httpClient.execute(httpPost, httpContext);
+
+</script>
+
  <div class="row MarginTop">
     <div class="large-8 push-4 columns panel">
         <h2>پست جدید</h2>
