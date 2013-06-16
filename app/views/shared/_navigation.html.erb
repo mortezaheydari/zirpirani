@@ -25,6 +25,26 @@
       </li>
       <li class="divider"></li>
     </ul>
+    <% if account_signed_in? %>
+        <ul class="left show-for-small">
+            <li class="show-for-small"><label>کاربر تووووولز</label></li>
+          <li>
+            <%= link_to "صفحه شخصي", user_path(current_user), id: "ProfileLink" %>
+          </li>
+          <% if current_user && current_user.has_role?(:admin) %>
+                <li><%= link_to "میم جدید", new_meem_path %></li>
+                <li><%= link_to "صندلی داوری", home_davari_path %></li>
+          <% end -%>
+          <li><%= link_to "پست جدید", new_post_path, id: "newPostLink" %></li>
+          <li><%= link_to "تغییر کلمه رمز", edit_account_registration_path(current_user) %></li>
+          <li><%= link_to "خروج از سایت", destroy_account_session_path, method: :DELETE, id: "exitLink" %></li>
+        </ul>
+    <% else %>
+            <ul class="left">
+                <li><%= link_to "ورود به سايت", new_account_session_path %></li>
+            </ul>
+
+    <% end -%>
 
   </section>
 </nav>
