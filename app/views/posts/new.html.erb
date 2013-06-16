@@ -1,13 +1,14 @@
  <div class="row MarginTop">
     <div class="large-8 push-4 columns panel">
-        <h2>Create Item</h2>
-        <%= simple_form_for(@post, :html => { :method => :post, :class => 'custom form-vertical'}) do |f| %>
+        <h2>پست جدید</h2>
+        <%= simple_form_for(@post, :html => { :method => :post, id: "PostNew", :class => 'custom form-vertical'}) do |f| %>
                 <%= f.error_notification %>
                 <%= f.input :title, :required => true %>
                 <%= f.file_field :image, class: "file text" %> <br> <br>
                 <%= f.input :source, placeholder: "http://www.example.com" %>
                 <%= f.submit 'بده بره', class: "button grey submitBtn homeBtn right" %>
         <% end %>
+        <div style="margin-top: 100px;" id="loadgif"><%= image_tag "load.gif" %></div>
     </div>
     <%= render "shared/toolbox" %>
 </div>
