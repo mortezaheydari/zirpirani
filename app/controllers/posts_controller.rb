@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   include SessionsHelper
-  before_filter :authenticate_account!, except: :show, :index
+  before_filter :authenticate_account!, except: :show
 
   def index
     redirect_to root_path
