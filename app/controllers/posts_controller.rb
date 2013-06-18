@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   include SessionsHelper
   before_filter :authenticate_account!, except: :show
 
+  def index
+    redirect_to root_path
+  end
+
   def show
     @post = Post.find(params[:id])
 

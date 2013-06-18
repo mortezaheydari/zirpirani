@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
   def list
   	@users = User.all
+
+    redirect_to root_path unless current_user_is_super_admin?
   end
 
   def remove_admin
@@ -56,5 +58,12 @@ class UsersController < ApplicationController
               redirect_to list_path, alert: "error unblocking #{@user.name}"
             end
   end
+
+  private
+
+    def current_user_is_super_admin?
+        !current_user.nil? && current_user.has_role?(:super_admin)
+    end
+
 
 end
