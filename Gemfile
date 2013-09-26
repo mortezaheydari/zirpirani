@@ -20,6 +20,9 @@ gem 'capistrano'
 gem 'capistrano-recipes'
 gem 'unicorn'
 
+# https://www.skylight.io/app/setup
+gem "skylight"
+
 # Rails – Twitter and Facebook Authentications with Omniauth and Devise
 # Source:	http://www.orhancanceylan.com/rails-twitter-and-facebook-authentications-with-omniauth-and-devise/
 	gem "devise", ">= 2.1.2"
